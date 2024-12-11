@@ -9,22 +9,20 @@ from InsuranceAgent.Prompts import reviewerPrompt,generalConversationPrompt,gene
 config = yaml.safe_load(open("config.yaml"))
 os.environ["TAVILY_API_KEY"] = config["TAVILY_API_KEY"]
 
+# If you donot have Tavily API, comment the below tool
+
 tool = TavilySearchResults(
     max_results=5,
     search_depth="advanced",
     include_answer=True,
     include_raw_content=True,
-
-    # include_domains=[...],
-    # exclude_domains=[...],
-    # name="...",            # overwrite default tool name
-    # description="...",     # overwrite default tool description
-    # args_schema=...,       # overwrite default args_schema: BaseModel
 )
+# uncomment DuckDUckGo search for api free web search
+#tool =  DuckDuckGoSearchRun()
 
 llm = ChatOllama(model="llama3.2:3b")
 
-#tool =  DuckDuckGoSearchRun()
+
 
 def reviewerBot(state):
     """

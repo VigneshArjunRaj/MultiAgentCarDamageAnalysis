@@ -79,7 +79,7 @@ car-damage-analysis/
 git clone https://github.com/VigneshArjunRaj/MultiAgentCarDamageAnalysis.git
 ```
 
-2. Install dependencies
+2. Install dependencies and create Weights folder
 ```bash
 pip install -r requirements.txt
 ```
@@ -89,7 +89,7 @@ pip install -r requirements.txt
 # Add your Tavily API key to config.yaml
 tavily_api_key: YOUR_API_KEY
 ```
-
+for websearch without api, access [AgentNodesEdges](InsuranceAgent/AgentNodesEdges.py) file to comment tavily tool and uncomment DuckDuckGo tool
 4. Run the application
 ```bash
 streamlit run Application.py
@@ -119,6 +119,11 @@ streamlit run Application.py
 ![Analysis Result](<static/output (2).png>)
 ![Visualization](<static/output (1).png>)
 ![PDF Version](static/output.png)
+
+
+# TODO
+- add weights in a google drive
+- use Hugging Face spaces to host the application
 
 ## 🙏 Acknowledgments
 
